@@ -1,0 +1,9 @@
+Features:
+    - search functionality
+    - have each country show in a bubble
+    - when you click on the bubble, it expands to show each country's stats
+    - sort functionality: cases low to high, cases high to low
+
+
+Working: 
+    getting bubble to expand

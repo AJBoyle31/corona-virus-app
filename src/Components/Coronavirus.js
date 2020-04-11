@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import Countries from './Countries';
 
 class Coronavirus extends Component {
     constructor(props){
@@ -36,13 +36,8 @@ class Coronavirus extends Component {
             return <div>Loading...</div>;
         } else {
             return (
-                <ul>
-                    {data.map(item => (
-                        <li key={item.county}>
-                            {item.country}, {item.cases}
-                        </li>
-                    ))}
-                </ul>
+                //Search Component
+                <Countries data={data} />
             );
         }
         
