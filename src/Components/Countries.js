@@ -7,7 +7,7 @@ function Countries(props){
     return (
         <ul className="countryList">
             {props.data.map(item => (
-                <Country country={item} />
+                <Country country={item} key={item.country}/>
             ))}
         </ul>
     );

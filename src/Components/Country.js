@@ -1,18 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 import CountryData from './CountryData';
 
-function Country(props){
-    let open = true;
-    function handleClick() {
-        open = !open;
+class Country extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            isHidden: true
+        }
+        this.toggleStats = this.toggleStats.bind(this);
     }
-    return (
-        <div>
-            <li key={props.country.country} className="countryBubble" onClick={handleClick}>
-                {open ? props.country.country : <CountryData country={props.country}/>}
+    toggleStats(){
+        this.setState(state => ({
+            isHidden: !state.isHidden
+        }));
+    }
+    render(){
+        //let showStats = this.state.isHidden;
+        return (
+            <li key={this.props.country.country} className="countryBubble" onClick={this.toggleStats}>
+                {this.props.country.country}
+                <br/>
+                {this.state.isHidden ? "" : <CountryData country={this.props} />}
             </li>
-        </div>
-    );
+        );
+    
+    }
 }
 
 export default Country;
